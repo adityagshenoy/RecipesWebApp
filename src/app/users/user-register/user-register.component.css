@@ -1,0 +1,54 @@
+.container {
+    display: flex;   
+}
+
+
+.form-row {
+    justify-content: space-around !important  ; 
+}
+
+.form-check {
+    margin-left: 8%;
+}
+
+.errormessages{
+    color:red;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+h1 {
+    
+    margin:2rem 0 2rem 0;
+    text-align: center;
+    font-weight:500;
+    font-size: xx-large;
+}
+
+
+.btn:disabled{
+    opacity: .5;
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.links{
+    color: whitesmoke;
+    margin-left: 47%;
+    margin-top: 1%;
+    padding: 1rem;
+    width: fit-content;
+    background-color: darkslategray;   
+    
+}
+.links:hover{
+    text-decoration: none;
+color: black;
+background-color: lightgray;
+text-decoration: none;
+}
+a:hover
+{
+    text-decoration: none;
+}

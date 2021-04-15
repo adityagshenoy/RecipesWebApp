@@ -1,0 +1,10 @@
+        <a [routerLink]="[ '/recipedisplay', this.recipeCard.Recipeid ]">
+            <mat-card>         
+                <img mat-card-image   src="{{this.recipeCard.image}}" alt="Photo of {{this.recipeCard.title}}">
+                    <!-- <img class="card-img-top img-fluid" [src]="this.recipebox.image" alt="{{this.recipebox.title}}"> -->
+                <mat-card-header>                    
+                    <mat-card-title><h2>{{this.recipeCard.title}}</h2></mat-card-title>                    
+                </mat-card-header>                                        
+                    <div id = "recipecardtext" [innerHTML]="this.displaysummary"></div>                
+            </mat-card>
+        </a>

@@ -1,0 +1,92 @@
+<div id="outside"> 
+
+    <div  class="container col col-lg-10">
+    <div id="nameappear">
+        
+         <h3>{{this.userfor?.Firstname}} {{this.userfor?.Lastname}}</h3>      
+    </div>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['aboutme']" routerLinkActive="active-link"><h2>My Profile</h2></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-menu">menu</span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="[ '/userpages', this.userfor?.UserID, 'favorites' ]" routerLinkActive="active-link">Favorites </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="[ '/userpages', this.userfor?.UserID,'friends' ]" routerLinkActive="active-link">Friends </a>
+          </li>
+        
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="[ '/userpages', this.userfor?.UserID, 'imadeit' ]" routerLinkActive="active-link">I made it </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="[ '/userpages' ,this.userfor?.UserID,'myreviews' ]" routerLinkActive="active-link">My reviews</a>
+          </li>
+      </ul>      
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- <div id="outside"> 
+
+    <div  class="container col col-lg-10">
+        <div id="nameappear">
+        <h3>{{this.userfor.Firstname}} {{this.userfor.Lastname}}</h3>     
+        </div>
+         <div class="navbar">
+            <a class="col col-lg-2" [routerLink]="['/userpages',this.userfor.UserID,'aboutme']" routerLinkActive="active-link">            
+                <div id="navitem" ><h2>About Me</h2></div></a>
+            <a class="col col-lg-2" [routerLink]="[ '/userpages',this.userfor.UserID,'favorites' ]" routerLinkActive="active-link">        
+                <div  id="navitem"><h2> Favorites</h2></div></a>
+            <a class="col col-lg-2" [routerLink]="[ '/userpages',this.userfor.UserID,'friends' ]" routerLinkActive="active-link">            
+                <div id="navitem" ><h2> Friends</h2></div></a>
+            <a class="col col-lg-2" [routerLink]="[ '/userpages',this.userfor.UserID,'imadeit' ]" routerLinkActive="active-link">        
+                <div id="navitem"  ><h2> I made it</h2></div></a>           
+            <a class="col col-lg-2" [routerLink]="[ '/userpages',this.userfor.UserID,'myreviews' ]" routerLinkActive="active-link">
+                <div id="navitem" ><h2>My Reviews</h2></div></a>
+            
+
+            
+        </div> 
+        <router-outlet></router-outlet>
+       
+    </div>
+    
+    
+    </div> 
+
+ -->
+
+<!-- 
+    <div id="outside"> 
+
+        <div  class="container col col-lg-10">
+            <h3>{{this.userfor.Firstname}} {{this.userfor.Firstname}}</h3>     
+             <div class="navbar">
+                <div id="navitem" class="col col-lg-1"><a [routerLink]="['/userpages',this.userfor.UserID,'aboutme']" routerLinkActive="active-link">            
+                    <h2> About Me</h2></a></div>
+                <div  id="navitem" class="col col-lg-1"><a [routerLink]="[ '/userpages',this.userfor.UserID,'favorites' ]" routerLinkActive="active-link">        
+                    <h2> Favorites</h2></a></div>
+                <div id="navitem" class="col col-lg-1"><a [routerLink]="[ '/userpages',this.userfor.UserID,'friends' ]" routerLinkActive="active-link">            
+                    <h2> Friends</h2></a></div>
+                <div id="navitem"  class="col col-lg-1"><a [routerLink]="[ '/userpages',this.userfor.UserID,'imadeit' ]" routerLinkActive="active-link">        
+                    <h2> I made it</h2></a></div>
+                <div id="navitem" class="col col-lg-2"><a [routerLink]="[ '/userpages',this.userfor.UserID,'myphotos' ]" routerLinkActive="active-link">        
+                    <h2> My Photos</h2></a></div>
+                <div id="navitem" class="col col-lg-2"><a [routerLink]="[ '/userpages',this.userfor.UserID,'myreviews' ]" routerLinkActive="active-link">
+                    <h2>My Reviews</h2></a></div>
+                <div id="navitem" class="col col-lg-2"><a [routerLink]="[ '/userpages',this.userfor.UserID,'personalrecipes' ]" routerLinkActive="active-link">
+                    <h2>Personal Recipes</h2></a></div>
+            </div> 
+            <router-outlet></router-outlet>
+           
+        </div>
+        
+        
+        </div>  -->

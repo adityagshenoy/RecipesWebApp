@@ -1,0 +1,18 @@
+
+Fetching all I Made it Recipes
+
+<p>Add recipe link </p>
+<a [routerLink]="[ '/userpages', this.id, 'addrecipe' ]">Add Recipe</a>
+
+Fetch Logic from server
+<div *ngIf="this.recipebyuserobservable | async">
+    <div class="row">
+    <div class="col col-lg-4" *ngFor ="let submitrecipe of this.recipebyuserobservable | async">
+        <app-scrolling-recipe-card [recipeCard]="submitrecipe"></app-scrolling-recipe-card>
+    </div>
+</div>
+</div>
+<div *ngIf="!this.recipebyuserobservable | async">
+    No favoruites
+</div>
+

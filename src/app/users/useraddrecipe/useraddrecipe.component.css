@@ -1,0 +1,15 @@
+.ingredientcomponent 
+{    
+    flex:0;
+    border-width:thick  !important;   
+    display: list-item; 
+    width: fit-content;
+}
+
+.instructioncomponent 
+{    
+    flex:0;
+    border-width:thick  !important;   
+    display: list-item; 
+    width: fit-content;
+}

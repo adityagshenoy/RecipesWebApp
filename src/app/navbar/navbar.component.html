@@ -1,0 +1,188 @@
+
+<mat-toolbar id="toolbarnav" color="primary">
+    
+    <div matRipple [matRippleUnbounded]="false">
+        <a  href="#" >Recipe Application</a>
+    </div>
+    <span class="example-spacer"></span>
+    
+        
+    <span id="normalnavbarpc" class="example-form">
+    <mat-form-field  class="example-full-width">
+        <mat-label >Search</mat-label>
+        <input matInput #inputsearch  placeholder="Ex. chciken">
+
+        <!-- <a [class.disabled]="inputsearch.value" [routerLink]="[ '/searchrecipe',inputsearch.value]" >
+            <span> <mat-icon class="mat-icon mat-icon-search">search</mat-icon></span>
+        </a>    -->
+        <a type="submit" [class.disabled] = "inputsearch.value== ''" [routerLink]="[ '/searchrecipe',inputsearch.value]">
+            <span> <mat-icon class="mat-icon mat-icon-search">search                
+            
+           
+        </mat-icon>
+        </span>       
+        </a>
+    
+
+    </mat-form-field>  
+               
+    </span>
+    <span class="example-spacer" id="normalnavbarpc"></span>
+    <span class="example-spacer" id="normalnavbarpc"></span>
+    <span class="example-spacer" id="normalnavbarpc"></span><span class="example-spacer"></span>
+  <span id="normalnavbarpc">
+    <span id="normalnavbarpc" *ngIf="!isLoggedin">
+        <a  [routerLink]="[ '/usersignin' ]">
+            <h2 id="labelcreate">Login/Create profile  
+                <span><mat-icon id="mat-icon mat-icon-cirlce">account_circle</mat-icon></span></h2>
+           </a>
+    </span>        
+    </span>
+    
+    
+    <span id="normalnavbarpc" *ngIf="isLoggedin" >    
+        <div matRipple [matRippleUnbounded]="false" id="inlinelinks">
+            <h2 id="labelcreatelogin" text="Logged in as: {{Userfirstname}} {{this.Userlastname}}">Logged in as: {{Userfirstname}} {{this.Userlastname}} </h2>
+            <a  [routerLink]="[ '/userpages',UserID,'aboutme' ]">
+            <h2 id="labelcreatelogin">Click to view your profile</h2>
+            </a>                 
+        </div>      
+    </span>
+    
+    <span id="normalnavbarpc" *ngIf="isLoggedin" >
+        &nbsp;
+        &nbsp; 
+        <mat-icon id="mat-icon-cirlce">account_circle</mat-icon>
+    </span>   
+    
+ 
+    
+    
+    <span id="normalnavbarpc" class="example-spacer"></span>
+
+    <span id="normalnavbarpc">
+        <div *ngIf="isLoggedin">
+        <a [routerLink]="[ '/userpages',UserID,'favorites' ]"><mat-icon>favorite</mat-icon>
+        </a>
+        </div>
+    </span>
+    <span id="normalnavbarpc" class="example-spacer"></span>
+    <span id="normalnavbarpc">
+        <div *ngIf="isLoggedin">
+            <a [routerLink]="[ '/logout' ]">
+                <h2 id="label">Logout </h2>
+            </a>
+        </div>
+    </span>
+
+    <span  class="example-spacer"></span>
+    <button class="menu-mobile-icon" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>           
+      <span class="example-spacer"></span>
+  </mat-toolbar>
+
+
+  <mat-menu #menu="matMenu">                           
+    <button  mat-menu-item (click)="searchDialog()" >
+        <mat-icon>search</mat-icon>
+        <span>Search</span>        
+      </button>
+    <hr/>
+    <span mat-menu-item  *ngIf="!isLoggedin">
+        <a  [routerLink]="[ '/usersignin' ]">
+            <span>Login/Create profile  
+                <span><mat-icon id="mat-icon-cirlce">account_circle</mat-icon></span></span>
+        </a>
+    </span>   
+    <hr/>
+
+
+    <div mat-menu-item *ngIf="isLoggedin">                 
+        <h2 id="labelcreatelogin">Click to view your profile</h2>        
+    </div>
+    <hr/>
+    <div mat-menu-item *ngIf="isLoggedin">                 
+        <h2 id="labelcreatelogin" text="Logged in as: {{Userfirstname}} {{this.Userlastname}}">Logged in as: {{Userfirstname}} {{this.Userlastname}} </h2>        
+    </div>    
+    <hr/>        
+    <div mat-menu-item *ngIf="isLoggedin">
+        <a [routerLink]="[ '/logout' ]">          
+            <h2 id="label">Logout <mat-icon id="mat-icon-logout">logout</mat-icon> </h2>
+        </a>
+    </div>
+  </mat-menu>
+
+
+
+
+
+
+
+
+
+<!-- 
+<mat-toolbar color="primary">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+        
+        <a class="navbar-brand" href="#" class="row">
+            
+            <h3>Recipe App</h3>
+        </a>
+
+        <button class="navbar-toggler navbar-nav" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="col-lg-1">
+
+            </div>
+            <div class="col-lg-4" id="lg4">
+                 <h2 id="label">Search: </h2> 
+                 <input type="text" id="textsearch" #search [(ngModel)]="searchtext"  [ngModelOptions]="{standalone: true}">      
+                  <mat-form-field class="example-full-width"   #search>
+                    <mat-label><h2>Search</h2> </mat-label>
+                     <input matInput #message maxlength="256" placeholder="Search text..." [(ngModel)]="searchtext" >          
+                  </mat-form-field>  
+            </div>
+            
+            <div class="col-lg-1">
+                <a [routerLink]="[ '/searchrecipe',this.searchtext]"><img src="./../../assets/Image/search-flat.png"></a>
+            </div>
+                        
+            <div class="col-lg-1">
+                <div *ngIf="isLoggedin">
+                <a [routerLink]="[ '/userpages',UserID,'favorites' ]">
+                <img src="./../../assets/Image/Wishlist.png"></a>
+                </div>
+                <div *ngIf="!isLoggedin">
+
+                </div>
+            </div>
+            <div class="col-lg-3" id="lg3" >
+                <span *ngIf="!isLoggedin">
+                <a  [routerLink]="[ '/usersignin' ]">
+                    <h2 id="labelcreate">Login/Create profile  <img src="./../../assets/Image/Profile.png"></h2>
+                   </a>
+                </span>
+                <span *ngIf="isLoggedin" id="inline">
+                    <a  [routerLink]="[ '/userpages',UserID,'aboutme' ]">
+                    <h2 id="labelcreatelogin">Logged in as: {{Userfirstname}} {{this.Userlastname}} </h2>
+                    </a>
+                </span>
+            </div>
+            <div class="col-lg-1">
+                <a [routerLink]="[ '/logout' ]">
+                    <h2 id="label">Logout </h2>
+                </a>
+            </div>
+             <div class="col-lg-1">
+                <a [routerLink]="[ '/path' ]"><img src="./../../assets/Image/Hamburgerdahses.png"></a>
+            </div> 
+        </div>
+    </div>
+    </nav>
+
+    </mat-toolbar>   -->

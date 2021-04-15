@@ -1,0 +1,42 @@
+
+<p>Forms for Adding Recipe
+and all details.
+First will be ingredients
+and then instructions.
+
+Will be dynamic. Will have submit button. After adding every ingredient(implement check dirty) new checkbox appears.
+Every ingredient has 
+
+After this adding instructions every instruction adding chronologically same logic.
+
+Later recipe flags to be included.
+</p>
+
+
+<form [formGroup]="ingredientform" (ngSubmit)="onSubmit()">
+     
+<label>Add Ingredients</label>                              
+
+<div class="ingredientcomponent border">
+    <h2>Add an Ingredient</h2>
+    <div #dynamiccomponent></div>
+    <br/>
+   <button (click)="onclickdynamic()">Add ingredient</button>
+
+   <button (click)="submitingredient()"> SUbmit</button>
+</div>
+<br/>
+<div class="instructioncomponent border">  
+    <h2>Add an Instruction</h2>
+   <div #dynamicinstructioncomponent></div>
+   <br/>
+   <button (click)="onclickdynamicinstructionadd()">Add instruction</button>
+
+   <button (click)="submitinstructions()"> SUbmit</button>
+</div>
+
+   
+
+</form>
+<br/><br/><br/>
+<button (click)="addRecipe()"> Add Recipe to DB</button>

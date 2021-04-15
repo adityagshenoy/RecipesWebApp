@@ -1,0 +1,12 @@
+.dialog{
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card {
+    padding: 1rem;
+    background-color: beige;
+    border: none;
+    box-shadow: none !important;
+}
+

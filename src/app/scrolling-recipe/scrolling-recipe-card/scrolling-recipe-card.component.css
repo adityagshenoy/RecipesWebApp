@@ -1,0 +1,47 @@
+mat-card {
+    background-color:rgb(213, 233, 238);
+    
+}
+/* class="img-fluid" */
+.mat-card-image {
+
+    padding: 1rem;
+}
+
+mat-card-title {
+    color: black;
+}
+#recipecardtext {
+    color: black;
+}
+
+.rectangle
+{
+    border: black;
+    fill:none;
+    stroke-width:3;
+    stroke:#000000
+}
+
+.title
+{
+    font-size: larger;
+}
+
+.card-block {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card {
+    height: 25rm;
+    width: 35rm;
+    background-color: lightcyan;
+}
+
+.card-img-top {
+    height: 18rm;
+}

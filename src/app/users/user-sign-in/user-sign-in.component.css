@@ -1,0 +1,39 @@
+
+form {
+    margin: 2rem;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+.form-group {
+    margin-bottom:2em
+}
+
+.hyperlinks {
+    margin-left: 3rem;     
+       
+}
+.btn {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+}
+.btn:disabled{
+    opacity: .5;
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+a {
+padding-bottom: 2rem;
+
+}
+mat-label{
+    font-size: 1.2rem;
+}
+
+mat-form-field {
+    width: 30%;
+    font-size: 1.2rem;
+}

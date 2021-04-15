@@ -1,0 +1,24 @@
+
+
+Freinds page Fetching all freinds,
+
+also suggested freinds
+<!-- Usea auser card and then display-->
+
+Fetch Logic from server
+
+<div *ngIf="this.friendsuserobservable | async ">
+    <div class="row">
+    <div class="col col-lg-4" *ngFor ="let friend of this.friendsuserobservable | async ">
+        <div *ngIf="friend">
+            <app-usercard [user]="friend"></app-usercard>
+        </div>
+        <div *ngIf="!friend">
+            This User Id does not exist 
+        </div>
+    </div>
+    </div>
+</div>
+<div *ngElse>
+    No Favorites
+</div>

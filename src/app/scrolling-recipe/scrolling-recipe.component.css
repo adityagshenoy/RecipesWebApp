@@ -1,0 +1,15 @@
+.col {
+    padding: 10px;
+}
+
+.row {
+    
+    justify-content: center;
+}
+
+
+#progressdiv {
+    display: flex;
+    justify-content: center;    
+    align-self: center;
+}

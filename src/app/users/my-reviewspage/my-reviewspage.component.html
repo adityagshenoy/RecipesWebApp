@@ -1,0 +1,27 @@
+
+
+Fetching Reviews
+<div class="row">
+    <div class="column col-6">
+        Reviews by you
+        <div *ngIf="reviews">
+        <div  *ngFor="let review of reviews">
+            
+            <app-reviewcard [review]="review"></app-reviewcard>
+        </div>
+        <div *ngIf="!reviews">
+            No Review by you
+        </div>
+    </div>
+    </div>
+    <div class="column col-6">
+        Reviews by others
+        <div  *ngFor="let review of reviewbyothers">
+            
+            <app-reviewcard [review]="review"></app-reviewcard>
+        </div>
+        <div *ngIf="!reviewbyothers">
+            No Review by others
+        </div>
+    </div>
+</div>

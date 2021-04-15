@@ -1,0 +1,159 @@
+@media screen and (max-width: 720px) {
+    .menu-mobile-icon {
+        display: inline;
+        background-color: transparent;
+        border: transparent;
+    }
+  }
+  @media screen and (min-width: 720px) {
+    .menu-mobile-icon {
+        display: none;
+        
+    }
+  }
+  @media screen and (max-width: 720px) {
+  #normalnavbarpc {
+    display: none;
+  }
+}
+/* @media screen and (min-width: 481px) {
+    #normalnavbarpc {
+        
+    }
+  } */
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar {
+    color: black;
+  }
+  .mat-icon {      
+      vertical-align: middle;
+    font-size: 34px;
+    
+  }
+
+  a {
+color:whitesmoke;
+  }
+  a.disabled {
+    color:darkred;
+    pointer-events: none;
+    cursor: not-allowed; 
+ }
+
+  a:hover { text-decoration: none; }
+
+  #inlinelinks{
+    display: inline-flexbox;
+}
+
+ #inline {
+    display: inline;
+} 
+#toolbarnav {
+    height: 5rem;
+    
+  }
+
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /*
+  
+
+  .mat-icon {
+    font-size: 50px;
+    padding-top: 1rem;
+  }
+
+
+
+  span {
+    color: black;
+  }
+ 
+
+#inline {
+    display: inline;
+}
+
+#textsearch {
+    padding: 0;
+    flex: 1;
+}
+
+*/
+
+
+
+/* .label
+{
+    color:lightskyblue;    
+    
+    padding-bottom: 0;    
+    margin-bottom: 0;
+}
+
+
+
+#searchtext {
+    display: flex;
+     padding: 0;
+  flex: 1;
+  
+  
+  
+}
+
+#create {
+    color:lightskyblue; 
+    width: 100;
+    
+    
+}
+    
+#searchfield {     
+     flex:row;
+     flex: 1;
+}
+
+#createprof {    
+    color:lightskyblue; 
+    float:left;
+    
+    padding-bottom: 0;    
+    margin-bottom: 0;
+    
+}
+span {
+    font-size: 20;
+} */

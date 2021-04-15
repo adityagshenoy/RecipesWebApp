@@ -1,0 +1,11 @@
+
+ <span mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Search Recipes</mat-label>
+      <input matInput  #inputsearch placeholder="Ex. chciken">
+    </mat-form-field>
+</span>
+  <span mat-dialog-actions>
+     <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [routerLink]="[ '/searchrecipe',inputsearch.value]" (click)="onNoClick()" cdkFocusInitial>Submit</button>
+  </span> 

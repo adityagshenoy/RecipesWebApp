@@ -1,0 +1,52 @@
+
+<h1>About Me</h1>
+<div class="row">
+<div class="column col-lg-8">
+
+<div *ngIf="this.userfor.Aboutyou">
+    {{this.userfor.Aboutyou}}
+    
+</div>
+<div *ngIf="!this.userfor.Aboutyou">
+    Tell us about yourself(If no data then link to add)(Linka and Api to update only the About you field in mongo)
+</div>
+<br/>
+<h2>My Location</h2>
+<div *ngIf="this.userfor.City">
+    {{this.userfor.City}}
+</div>
+<div *ngIf="!this.userfor.City">
+    Click on Edit Profile to add city
+</div>
+<br/>
+<h2>Connect with me</h2>
+
+Link for Social Media handles
+
+<div *ngIf="this.userfor.SocialMediaHandles">
+    <div *ngIf="this.userfor.SocialMediaHandles['pinterest']">
+      <a href='{{this.userfor.SocialMediaHandles["pinterest"]}}' target="_blank"> Pinterest </a> 
+    </div>    <br/>
+     <div *ngIf="this.userfor.SocialMediaHandles['facebook']">
+        <a href='{{this.userfor.SocialMediaHandles["facebook"]}}' target="_blank"> Facebook </a> 
+    </div> <br/>
+    <div *ngIf="this.userfor.SocialMediaHandles['twitter']">
+        <a href='{{this.userfor.SocialMediaHandles["twitter"]}}' target="_blank"> Facebook </a> 
+    </div> <br/>
+    <div *ngIf="this.userfor.SocialMediaHandles['personalblog']">
+        <a href='{{this.userfor.SocialMediaHandles["personalblog"]}}' target="_blank"> Personal Blog </a> 
+    </div> <br/> 
+</div>
+<div *ngIf="!this.userfor.SocialMediaHandles">
+    No Social Media handles
+</div>
+<br/>
+<br/>
+</div>
+
+<div class="column col-lg-4">
+<h2>Edit Public profile link</h2>
+<button mat-stroked-button color="accent" [routerLink]="[ '/usereditprofile',this.userfor.UserID ]" >Edit Profile</button>
+
+</div>
+</div>

@@ -1,0 +1,100 @@
+@media screen and (max-width: 576px) {
+    .navbar-toggler {
+        display: inline;
+        background-color: transparent;
+        border: transparent;
+    }
+   
+  }
+  @media screen and (min-width: 576px) {
+    .navbar-toggler {
+        display: none  ;        
+    }
+ 
+  }
+
+  .navbar-toggler-icon{
+      background-color: black;
+  }
+
+
+.container {
+    background-color: white;
+    height: 100%;
+    flex-direction: column;
+    flex:1;
+    vertical-align: middle;
+    padding: 5;
+    
+}
+.active-link
+{
+    color:black;
+    background-color:blue;
+    border-radius: 25px !important;
+    
+}
+#nameappear {
+    height: 60px;
+    
+    background-image:url("../../assets/Image/cupcake-header.jpg");
+    
+}
+
+
+#outside {
+    background-color:lightgray;
+    display: flex;
+    height: 100%;
+  }
+
+.navbar {
+    background-color: lightgray;    
+    align-content: center;    
+    justify-items: center;       
+}
+
+.a {
+    margin: 1rem;
+    background-color: chocolate;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    line-height: 100px;
+    display: block;
+    
+    
+}
+
+
+#navitem {
+    padding-top: 3px;  
+    align-content: center;
+    
+    
+    /* align-items: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center; */
+    line-height: 100px;
+    display: block;
+}
+
+h2 {
+    margin: 10px;
+    
+    
+}
+
+
+h3 {
+    font-size: 2rem;
+    color:blue;
+    padding-top: 10px;
+    padding-left: 60px;
+    
+}

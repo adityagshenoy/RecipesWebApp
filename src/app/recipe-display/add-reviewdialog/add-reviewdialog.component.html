@@ -1,0 +1,20 @@
+
+
+<button class="close" color="warn" mat-raised-button [mat-dialog-close]="true">X</button>
+<h2 mat-dialog-title>Add Review</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Please fill the Review</h3>
+  <form class="reviewform" >
+    <mat-form-field class="example-half-width" required>
+      <mat-label>Your Rating</mat-label>
+      <input matInput #reviewrating placeholder="4" value="">
+    </mat-form-field>
+  <br/>
+    <mat-form-field class="example-full-width" required>
+      <mat-label>Leave a review</mat-label>
+      <textarea matInput #reviewtext placeholder="Ex. Above Avergae"></textarea>
+    </mat-form-field>
+    <button  mat-raised-button color="primary" (click)="addReview(reviewrating.value,reviewtext.value)">Add Review</button>
+  </form>
+
+</mat-dialog-content>

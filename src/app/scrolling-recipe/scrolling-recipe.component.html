@@ -1,0 +1,26 @@
+
+
+
+<app-recipe-random  (randomrecipesprop)="getRandomRecipe($event)"></app-recipe-random>
+
+<div class="container col-lg-10 col-xs-10">
+    
+    <div class="row">
+        <div *ngFor="let item of this.displayrecipes" class="col col-md-6 col-lg-3 col-sm-12 col-10">
+            <!-- <ng-template ngFor let-item [ngForOf]="this.displayrecipes">
+                <app-scrolling-recipe-card [recipeCard]="item"></app-scrolling-recipe-card>
+            </ng-template> -->
+            <app-scrolling-recipe-card [recipeCard]="item"></app-scrolling-recipe-card>
+        </div>
+        <div *ngIf="!this.displayrecipes">
+            No Recipes at this point of time. Apologies
+        </div>
+    </div>
+</div>
+<div id="progressdiv">
+    <app-progress-spinner></app-progress-spinner>
+</div>
+
+  
+
+

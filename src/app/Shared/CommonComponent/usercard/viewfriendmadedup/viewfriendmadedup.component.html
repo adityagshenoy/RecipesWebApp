@@ -1,0 +1,14 @@
+
+<button mat-button [mat-dialog-close]="true">Close</button>
+    <div *ngIf="this.recipebyuserobservable | async" class="row">
+        <div *ngFor="let item of this.recipebyuserobservable | async" class="col col-lg-3">
+            <!-- <ng-template ngFor let-item [ngForOf]="this.displayrecipes">
+                <app-scrolling-recipe-card [recipeCard]="item"></app-scrolling-recipe-card>
+            </ng-template> -->
+            <app-scrolling-recipe-card [recipeCard]="item"></app-scrolling-recipe-card>
+        </div>
+    </div>
+    <div *ngElse >
+        No Recipes found
+    </div>
+

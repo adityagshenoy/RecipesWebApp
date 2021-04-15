@@ -1,0 +1,111 @@
+
+<div>
+    <span id="header">
+        <h1>Register for Recipe Application</h1>
+    </span>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col-1">
+                    <label><h2>Title</h2></label>
+                    <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': f.title.touched && f.title.errors }">
+                        <option value=""></option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Ms">Ms</option>
+                    </select>
+                    <div *ngIf="f.title.errors" class="invalid-feedback">
+                        <div *ngIf="f.title.errors.required">Title is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-4">
+                    <label><h2>First Name</h2></label>
+                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': f.firstName.touched && f.firstName.errors }" />
+                    <div class="errormessages" *ngIf="f.firstName.errors && f.firstName.touched">
+                        <div class="errormessages" *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-4">
+                    <label><h2>Last Name</h2></label>
+                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': f.lastName.touched && f.lastName.errors }" />
+                    <div class="errormessages" *ngIf="f.lastName.errors && f.lastName.touched">
+                        <div class="errormessages"  *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-4">
+                    <label><h2>Email</h2></label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }" />
+                    <div class="errormessages"  *ngIf="f.email.errors && f.email.touched">
+                        <div class="errormessages"  *ngIf="f.email.errors.required">Email is required</div>
+                        <div class="errormessages"  *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    </div> 
+                    </div>   
+                    <div class="form-group col-4">
+                    <label><h2>Confirm Email</h2></label>
+                    <input type="text" formControlName="confirmemail" class="form-control" [ngClass]="{ 'is-invalid': f.confirmemail.touched && f.confirmemail.errors }" />
+                    <div *ngIf="f.confirmemail.errors && f.confirmemail.touched">
+                        <div class="errormessages"  *ngIf="f.confirmemail.errors.required">Confirm Email is required</div>
+                        <div class="errormessages"  *ngIf="f.confirmemail.errors.email">Confirm Email must be a valid email address</div>
+                        <div class="errormessages"  *ngIf="f.confirmemail.errors.mustMatch">Emails must match</div>
+                    </div>
+               </div>
+                
+            </div>
+            <div class="form-row">
+                <div class="form-group col-4">
+                    <label><h2>Password</h2></label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors }" />
+                    <div class="errormessages"  *ngIf="f.password.errors && f.password.touched">
+                        <div class="errormessages"  *ngIf="f.password.errors.required">Password is required</div>
+                        <div class="errormessages"  *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+                
+                <div class="form-group col-4">
+                    <label><h2>Confirm Password</h2></label>
+                    <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': f.confirmPassword.touched && f.confirmPassword.errors }" />
+                    <div class="errormessages"  *ngIf="f.confirmPassword.errors && f.confirmPassword.touched">
+                        <div class="errormessages"  *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                        <div class="errormessages"  *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-4">
+                    <label><h2>Gender</h2></label>
+                    <input type="text" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': f.gender.touched && f.gender.errors }" />
+                    
+                    <div class="errormessages"  *ngIf="f.gender.errors && f.gender.touched">
+                        <div class="errormessages"  *ngIf="f.gender.errors.required">Gender is required</div>
+                        <div class="errormessages"  *ngIf="f.gender.errors.validGender">Gender can be only Male, Female or Other</div>
+                    </div>
+                </div>
+            
+                
+                    <div class="form-group col-4">
+                        <label><h2>City</h2></label>
+                        <input type="text" formControlName="City" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.City.errors }" />
+                        <div class="errormessages"  *ngIf="f.City.errors && f.City.touched">
+                            <div class="errormessages"  *ngIf="f.City.errors.required">City is required</div>
+                            
+                        </div>
+                    </div>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                <label for="acceptTerms" class="form-check-label"><h2>Accept Terms & Conditions</h2></label>
+                <div class="errormessages"  *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-5" [disabled]= "!registerForm.valid">Register</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            </div>
+        </form>
+</div>
+  
+{{this.varany}}
+<div class="links">
+ <h2> <a class="button" [routerLink]="[ '/userlogin' ]" routerLinkActive="active">Go to Sign in</a></h2>
+</div>

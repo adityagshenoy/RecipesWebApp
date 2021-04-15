@@ -1,0 +1,83 @@
+
+<div class="container col-lg-10">
+<nav class="navbar navbar-light navbar-expand-lg">
+
+    <!-- <div class="col-sm-2">
+        <a [routerLink]="[ '/path' ]">Home -></a>
+    </div> -->
+    <!-- <div class="col-sm-2">
+        <a [routerLink]="[ '/path' ]">Recipes -></a>
+    </div> -->
+    <!-- <div class="col-sm-2">
+        <a [routerLink]="[ '/path' ]">{{this.recipe.dishTypes[0]}} -></a>
+    </div> -->
+    <!-- <div class="col-sm-3">
+        <a [routerLink]="[ '/path' ]">MAININGREDIENT -></a>
+    </div> -->
+
+</nav>
+
+<div class="row">
+    <div class="col-sm-6">
+       <h1 appPopupelement [datatobepassed]="this.recipe.title"> {{this.recipe.title}}</h1><br/>    
+       <h2>Credits:  {{this.recipe.creditsText}}<br/></h2>
+        <div [innerHTML]="this.recipe?.summary"></div><br/>
+    </div>
+    <div class="col-sm-6">
+        <img [src]="this.recipe?.image" [alt]="this.recipe.title">
+    </div>
+</div>
+<div >    
+    <!-- <h1 *appAnimatedIF="!isLoggedin">    
+       <h3> Directive Please login to provide a review using the sign in at the top</h3>
+    </h1> -->
+<div class="row">
+<div *ngIf="!isLoggedin" class="col-sm-3">    
+    <h3>Please login to provide a review using the sign in at the top</h3>
+    
+</div>
+    <div appAnimatedIF="isLoggedin" *ngIf="isLoggedin" class="col-sm-3">
+        <button mat-raised-button color="primary" (click)="openReviewDialog()"><h2>Review it</h2></button>
+    </div>
+    <div *ngIf="!isLoggedin" class="col-sm-3">    
+        <h3>Please login to add this User as a friend</h3>
+    </div>
+        <div appAnimatedIF="isLoggedin" *ngIf="isLoggedin" class="col-sm-3">
+            <button mat-raised-button color="primary" (click)="addFriend()"><h2>Add </h2></button>Author as a friend
+        </div>
+    
+    <!-- <div *ngIf="!isLoggedin" class="col-sm-6">    
+        <app-foodmapsearch></app-foodmapsearch>
+    </div> -->
+</div>
+
+
+
+
+<H2>Ingredients</H2>
+<div class="row">    
+    <div *ngFor="let ingredient of this.recipe?.extendedIngredients" class="col-lg-5">
+       <li>{{ingredient.originalString}}</li>
+    </div>
+</div>
+Directions:
+<div>    
+   Prep time: {{this.recipe.readyInMinutes| readyTime}}
+<br/>
+    <h2>Steps:</h2>
+    
+    {{ this.recipe?.analyzedInstructions[0]?.steps[0].step}}
+    <div *ngIf="this.recipe && this.recipe.analyzedInstructions[0]">
+    <div *ngFor="let step of this.recipe?.analyzedInstructions[0]?.steps" class="col-lg-9">
+        <div class="row">
+        <h2  >{{step.number}} </h2>
+        <h3  class="col-lg-8">{{step.step}}</h3>  
+        </div>
+    </div>    
+</div>  
+</div>
+
+
+</div>
+
+<h2>More Recipes from this User</h2>

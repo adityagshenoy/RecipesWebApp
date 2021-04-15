@@ -1,0 +1,16 @@
+
+Fetching all the Favorites Recipes of that User
+
+Fetch Logic from server
+<div *ngIf="this.favrecipes">
+    <div class="row">
+    <div class="col col-lg-4" *ngFor ="let favorirecipe of this.favrecipes">
+        <app-scrolling-recipe-card [recipeCard]="favorirecipe"></app-scrolling-recipe-card>
+    </div>
+</div>
+</div>
+<div *ngIf="!this.favrecipes">
+    No favoruites
+</div>
+
+<router-outlet></router-outlet>

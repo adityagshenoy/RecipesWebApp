@@ -1,0 +1,18 @@
+
+<div class="container col-lg-10 col-xs-10">
+<div *ngIf="this.authors ">
+    <div class="row">
+    <div class="col col col-md-6 col-lg-4 col-sm-12 col-10" *ngFor ="let friend of this.authors">
+        <div *ngIf="friend">
+            <app-usercard [user]="friend"></app-usercard>
+        </div>
+        <div *ngIf="!friend">
+            Some eror occured. Apologies 
+        </div>
+    </div>
+</div>
+</div>
+<div *ngIf="!this.authors">
+    No Authors at this point of time. Apologies
+</div>
+</div>
