@@ -1,8 +1,8 @@
 
 
 <form [formGroup]="signInForm">
-    <div class="form-group col-10">
-        <mat-form-field appearance="fill">
+    <div class="form-group">
+        <mat-form-field appearance="fill" class="col-lg-4 col-md-8 col-xs-10">
             <mat-label>Enter your Email</mat-label>
             <input type="email" formControlName="email" matInput>                     
             <mat-error *ngIf="fsig.email.errors && fsig.email.touched">
@@ -12,8 +12,8 @@
             </mat-error>
           </mat-form-field>
     </div>
-    <div class="form-group col-10">        
-        <mat-form-field appearance="fill">
+    <div class="form-group">        
+        <mat-form-field appearance="fill" class="col-lg-4 col-md-8 col-xs-10">
             <mat-label>Enter your password</mat-label>
             <input type="password" formControlName="password" matInput [type]="hide ? 'password' : 'text'">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
