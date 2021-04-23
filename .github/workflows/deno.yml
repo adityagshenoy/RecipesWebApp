@@ -6,14 +6,14 @@
 # This workflow will install Deno and run tests across stable and nightly builds on Windows, Ubuntu and macOS.
 # For more information see: https://github.com/denolib/setup-deno
 
-name: Deno
+name: developdeploy
 
 on:
   push:
     branches: [develop]
 
 jobs:
-  test:
+  build-and-deploy:
     runs-on: ${{ matrix.os }} # runs a test on Ubuntu, Windows and macOS
 
     strategy:
@@ -37,10 +37,11 @@ jobs:
         run: deno test -A --unstable
       - name: Build
         run: |
-          npm install
-          npm run-script deploy
+            npm install
+            npm run-script start
       - name: Deploy
-        with: |
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: develop
           FOLDER: docs/
-        
