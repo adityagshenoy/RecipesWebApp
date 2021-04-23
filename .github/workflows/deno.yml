@@ -31,9 +31,6 @@ jobs:
         uses: denolib/setup-deno@c7d7968ad4a59c159a777f79adddad6872ee8d96
         with:
           deno-version: ${{ matrix.deno }} # tests across multiple Deno versions
-
-      - name: Run Tests
-        run: deno test -A --unstable
       - name: Build
         run: |
             npm install
